@@ -6,7 +6,7 @@ services:
       - 27017
   node:
     image: node
-    command: node /app/src/server.js
+    command: npm --prefix /app run dev
     ports:
       - 80:3000
     volumes:
