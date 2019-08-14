@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 
 module.exports = {
-    async index(request, response) {
+    async find(request, response) {
         const products = await Product.find();
 
         return response.json(products);
         // return response.json(await Product.find());
     },
-    // index: (request, response) => {
+    // find: (request, response) => {
     //     return Product.find().then((products) => response.json(products));
     // },
-    async store(request, response) {
+    async create(request, response) {
         const product = await Product.create(request.body);
 
         return response.json(product);
