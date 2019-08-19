@@ -4,10 +4,10 @@ const requireDir = require("require-dir");
 const cors = require("cors");
 
 mongoose.connect("mongodb://mongo:27017/nodeapi", { useNewUrlParser : true });
-requireDir("./models");
+requireDir("./src/models");
 
 express()
     .use(express.json())
     .use(cors())
-    .use('/api', require("./routes"))
+    .use('/api', require("./src/routes"))
     .listen(3000);
